@@ -27,8 +27,8 @@ def solution(food_times, k):
 
     # sum_value + (현재의 음식 시간 - 이전 음식 시간) * 현재 음식 개수와 k 비교
     while sum_value + ((q[0][0]) - previous) * length <= k:
-        now = heapq.heappop(q)[0]
-        sum_value += (now - previous) * length
+        now = heapq.heappop(q)[0]   # pop한 음식을 먹는 데에 걸리는 '초기'시간.
+        sum_value += (now - previous) * length  # 이전에 걸렸던 시간을 고려하여 총 취식 시간 계산
         length -= 1     # 다 먹은 음식 제외
         previous = now  # 이전 음식 시간 재설정
 
